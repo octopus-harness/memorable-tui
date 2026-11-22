@@ -1,0 +1,30 @@
+[package]
+name = "memorable-tui"
+version = "1.0.0"
+edition = "2021"
+authors = ["Leonid Medovyy <leonid@macron1.io>"]
+description = "A fast, keyboard-driven terminal user interface for Memorable AI context and memory studio"
+readme = "README.md"
+repository = "https://github.com/octopus-harness/memorable-tui"
+license = "MIT"
+keywords = ["tui", "memory", "markdown", "ratatui", "terminal"]
+categories = ["command-line-utilities"]
+
+[lib]
+name = "memorable_tui"
+path = "src/lib.rs"
+
+[[bin]]
+name = "memorable-tui"
+path = "src/main.rs"
+
+[dependencies]
+ratatui = "0.28"
+crossterm = "0.28"
+reqwest = { version = "0.12", features = ["blocking", "json", "multipart"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+anyhow = "1"
+unicode-width = "0.1"
+arboard = "3"
+tempfile = "3"
